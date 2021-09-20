@@ -1,0 +1,324 @@
+$dark-blue: #222;
+$green: #90feb5;
+$action-color: $green;
+$white: #f2e9db;
+$yellow: #FFC72C;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#main_container {
+    background-image: url(../img/bg4.jpg);
+    height: 790px;  
+}
+
+.container_1-img {
+    width: 80%;
+    margin-top:15px;
+    transition-timing-function: ease-in;
+    transition: 0.8s;
+    }
+    
+.container_1-img:hover {
+      opacity: 1;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      transition-timing-function: ease-in;
+      transition: 0.8s;
+      overflow: visible;
+    }
+
+#container_1-titles {
+    color: $white;
+    align-self: center;
+    flex-direction: column;
+    font-family: 'raleway', sans-serif;
+}
+
+.container_1-title {
+    font-size: 8em;
+    padding: 5px;
+    margin-left: 50px;
+    margin-top: -100px;
+    font-weight: 800;
+    font-family: 'raleway', sans-serif;
+ }
+ .container_1-subtitle {
+     font-weight: 300;
+     padding: 5px;
+     margin-left: 50px;
+ }
+ .logo {
+    width: 150px;
+    padding: 10px;
+    cursor: pointer;
+ }
+ .nav-link {
+     color:$white;
+ }
+ .nav-link:hover {
+   color: $yellow;
+ }
+ i {
+   color: $white;
+   cursor: pointer;
+   align-self: center;
+   margin-left: 15px;
+   margin-right: 20px;
+ }
+i:hover {
+  color: $yellow;
+}
+
+
+/*button*/
+
+
+.button_container {
+    display: block;
+    height: 100%;
+    animation: hue-rotate 10s linear infinite; 
+    padding: 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+ 
+  .button {
+    -webkit-font-smoothing: antialiased;
+    background-color: $dark-blue;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    text-decoration: none;
+    user-select: none;
+    letter-spacing: 1px;
+    color: white;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    transition: all 0.1s ease-out;
+  
+    &:hover {
+      background-color: $action-color;
+      color: #fff;
+    }
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  
+    &--bubble {
+      position: relative;
+      z-index: 2;
+      color: white;
+      background: none;
+  
+      &:hover {
+        background: none;
+      }
+  
+      &:hover + .button--bubble__effect-container .circle {
+        background: darken($action-color, 15%);
+      }
+  
+      &:hover + .button--bubble__effect-container .button {
+        background: darken($action-color, 15%);
+      }
+  
+      &:active + .button--bubble__effect-container {
+        transform: scale(0.95);
+      }
+  
+      &__container {
+        position: relative;
+        display: inline-block;
+  
+        .effect-button {
+          position: absolute;
+          width: 50%;
+          height: 25%;
+          top: 50%;
+          left: 25%;
+          z-index: 1;
+          transform: translateY(-50%);
+          background: $dark-blue;
+          transition: background 0.1s ease-out;
+        }
+      }
+    }
+  }
+  
+  .button--bubble__effect-container {
+    position: absolute;
+    display: block;
+    width: 200%;
+    height: 400%;
+    top: -150%;
+    left: -50%;
+    -webkit-filter: url("#goo");
+    filter: url("#goo");
+    transition: all 0.1s ease-out;
+    pointer-events: none;
+  
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 15px;
+      background: $dark-blue;
+      transition: background 0.1s ease-out;
+  
+      &.top-left {
+          top: 40%;
+          left: 27%;
+      }
+  
+      &.bottom-right {
+          bottom: 40%;
+          right: 27%;
+      }
+    }
+  }
+  
+  .goo {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .button--bubble__container {
+    top: 50%;
+    margin-top: -25px;
+  }
+  
+  @keyframes hue-rotate {
+        from {
+          -webkit-filter: hue-rotate(0);
+          -moz-filter: hue-rotate(0);
+          -ms-filter: hue-rotate(0);
+          filter: hue-rotate(0);
+        }
+        to {
+          -webkit-filter: hue-rotate(360deg);
+          -moz-filter: hue-rotate(360deg);
+          -ms-filter: hue-rotate(360deg);
+          filter: hue-rotate(360deg);
+        }
+  }
+
+  /*album*/
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+.product_img {
+  transition-timing-function: ease-in;
+  transition: 0.8s;
+  overflow: hidden;
+  }
+  
+.product_img:hover {
+    opacity: 1;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition-timing-function: ease-in;
+    transition: 0.8s;
+    overflow: hidden;
+  }
+
+.card {
+  overflow: hidden;
+  
+}
+.fruit_title {
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+
+.container-fluid_2 {
+  height: 650px;
+  background-color: #FFC72C;
+  align-items: center;
+
+}
+.cont_2-img {
+  width: 100%;
+  margin-left: 30px;
+}
+#cont_2-text {
+  width: 40%;
+}
+.row_2 {
+  display: flex;
+  justify-content: space-between;
+}
+.cont_2-title {
+  font-size: 8em;
+  font-weight: 800;
+  font-family: 'raleway', sans-serif;
+  color: #fff;
+}
+.cont_2-parr {
+  font-weight: 600;
+  margin-right: 25px;
+  color: $white;
+  font-size: 24px;
+}
+
+#cont_2-button{
+	width: 30%;
+	max-width:500px;
+	border: white solid 1px;
+	cursor: pointer;
+	background-color: #222;
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+  margin-top: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: 600;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Change text color & background opacity on hover*/
+#cont_2-button:hover{
+	background-color: rgba(0,0,0,0);
+	color: #222;
+  border: #222 solid 1px;
+}
+
+.container-fluid_3 {
+  height: 650px;
+}
+
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+}
