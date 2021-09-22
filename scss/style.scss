@@ -4,18 +4,117 @@ $action-color: $green;
 $white: #f2e9db;
 $yellow: #FFC72C;
 
+$black: #333;
+$lightergray: #d5d5d5;
+$lightgray: #f0f3f1;
+$gray: #e3dddd;
+$text: #888;
+$button: #3e3e3f;
+$button-hover: #565657;
+
 body {
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
+html {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+//HEADERS
+
+.navbar {
+  position: fixed;
+  top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+  z-index: 9999;
+  transition: all 200ms ease-in-out;
+}
+.navbar a {
+  font-weight: 500;
+  text-decoration: none;
+}
+.navbar_p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar_p a {
+  color: $dark-blue;
+  font-weight: 500;
+}
+.navbar_p i {
+  color: $dark-blue;
+}
+.logo {
+  width: 150px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.logoB {
+ display: none;
+ width: 50px;
+ cursor: pointer;
+}
+.logo_p {
+width: 130px;
+padding-top: 10px;
+}
+.nav-link {
+   color:$white;
+}
+.nav-link:hover {
+ color: $yellow;
+}
+i {
+ color: $white;
+ cursor: pointer;
+ align-self: center;
+ margin-left: 15px;
+ margin-right: 20px;
+}
+i:hover {
+color: $yellow;
+}
+.scroll-up .navbar {
+  background-color: #fff;
+  height: 90px;
+  justify-content: center;
+  filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
+}
+.scroll-up .navbar a {
+  color: $dark-blue;
+  font-weight: 500;
+}
+.scroll-up i {
+  color: $dark-blue;
+}
+.scroll-up .logoB {
+  display: initial;
+  padding-bottom: 10px;
+}
+.scroll-up .logo {
+  display: none;
+}
+.scroll-down .navbar {
+  transform: translate3d(0, -100%, 0);
+}
+
+
+//MAIN -INDEX
 
 #main_container {
     background-image: url(../img/bg4.jpg);
     height: 790px;  
 }
-
 .container_1-img {
     width: 80%;
-    margin-top:15px;
+    padding-top: 50px;
+    margin-top:50px;
     transition-timing-function: ease-in;
     transition: 0.8s;
     }
@@ -33,6 +132,8 @@ body {
     }
 
 #container_1-titles {
+    margin-top:50px;
+    padding-top: 20px;
     color: $white;
     align-self: center;
     flex-direction: column;
@@ -43,7 +144,6 @@ body {
     font-size: 8em;
     padding: 5px;
     margin-left: 50px;
-    margin-top: -100px;
     font-weight: 800;
     font-family: 'raleway', sans-serif;
  }
@@ -52,31 +152,8 @@ body {
      padding: 5px;
      margin-left: 50px;
  }
- .logo {
-    width: 150px;
-    padding: 10px;
-    cursor: pointer;
- }
- .nav-link {
-     color:$white;
- }
- .nav-link:hover {
-   color: $yellow;
- }
- i {
-   color: $white;
-   cursor: pointer;
-   align-self: center;
-   margin-left: 15px;
-   margin-right: 20px;
- }
-i:hover {
-  color: $yellow;
-}
-
-
-/*button*/
-
+ 
+//BUTTON
 
 .button_container {
     display: block;
@@ -193,12 +270,7 @@ i:hover {
     height: 1px;
   }
   
-  html, body {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  
+ 
   .button--bubble__container {
     top: 50%;
     margin-top: -25px;
@@ -219,7 +291,7 @@ i:hover {
         }
   }
 
-  /*album*/
+//ALBUM
   .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -255,6 +327,7 @@ i:hover {
   margin-bottom: 20px;
 }
 
+//CONT 2 
 .container-fluid_2 {
   height: 650px;
   background-color: #FFC72C;
@@ -290,7 +363,7 @@ i:hover {
 	max-width:500px;
 	border: white solid 1px;
 	cursor: pointer;
-	background-color: #222;
+	background-color: $dark-blue;
 	color: white;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -304,16 +377,174 @@ i:hover {
 	-ms-transition: all 0.3s;
 	transition: all 0.3s;
 }
-
-/* Change text color & background opacity on hover*/
 #cont_2-button:hover{
 	background-color: rgba(0,0,0,0);
-	color: #222;
-  border: #222 solid 1px;
+	color: $dark-blue;
+  border: $dark-blue solid 1px;
 }
 
+//CONT3
 .container-fluid_3 {
   height: 650px;
+}
+
+
+//PRODUCT-PAGE
+#highlight {
+  color: $black;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+.price {
+  margin: 0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  list-style: none;
+  li {
+    font-size: 0.85rem;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+  }
+}
+
+.breadcrumb-item {
+  &.active {
+    color: $black;
+  }
+  + .breadcrumb-item {
+    &::before {
+      content: '/';
+      display: inline-block;
+      padding: 0 0.5rem;
+      color: $lightergray;
+    }
+  }
+}
+
+.description {
+  border-top: 0.0625rem solid $gray;
+  margin: 2rem 0;
+  padding: 1rem 0 0 0;
+}
+
+.add-to-cart {
+  position: relative;
+  display: inline-block;
+  background: $button;
+  color: $white;
+  border: none;
+  border-radius: 0;
+  padding: 1.25rem 2.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateZ(0);
+  transition: color 0.3s ease;
+  letter-spacing: 0.0625rem;
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $button-hover;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+  }
+}
+.container {
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 75rem;
+  width: 100%;
+}
+
+.grid {
+  > [class*="column-"] {
+    padding: 1rem;
+  }
+  &.menu, &.product {
+    border-bottom: 0.0625rem solid $gray;
+  }
+  &.menu {
+    > [class*="column-"] {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+  }
+  &.product {
+    padding: 0 0 1.5rem 0;
+  }
+  &.second-nav {
+    > [class*="column-"] {
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.product-image {
+  display: none;
+}
+
+.image-list {
+  li {
+    margin: 0;
+  }
+}
+
+
+  .product-image {
+    display: block;
+    img {
+      height: 52vh;
+      &.active {
+        display: block;
+        margin: 0 0 0.75rem 0;
+      }
+    }
+  }
+  
+  .image-list {
+    display: flex;
+    overflow: hidden;
+    li {
+      margin: 0 0.75rem 0 0;
+      flex-basis: 100%;
+      &:nth-child(3) {
+        margin: 0;
+      }
+    }
+    img {
+      height: 10rem;
+      width: 100%;
+      transition: opacity 0.3s ease;
+      cursor: pointer;}
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+
+@keyframes fadeImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
