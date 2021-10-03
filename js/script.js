@@ -1,4 +1,4 @@
-//NAVBAR
+//NAVBAR 
 const body = document.body;
 let lastScroll = 0;
 
@@ -19,7 +19,7 @@ window.addEventListener('scroll', () =>{
 })
 
 
-//buton
+//buton 
 $('.button--bubble').each(function() {
     var $circlesTopLeft = $(this).parent().find('.circle.top-left');
     var $circlesBottomRight = $(this).parent().find('.circle.bottom-right');
@@ -66,3 +66,5 @@ $('.button--bubble').each(function() {
       btTl.restart();
     });
   });
+
+
