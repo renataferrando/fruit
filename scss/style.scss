@@ -12,17 +12,39 @@ $text: #888;
 $button: #3e3e3f;
 $button-hover: #565657;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   height: 100%;
   text-align: center;
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+.row .no-gutters {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 //NAV
-#nav-container {
-  padding: 0;
+.nav-btn {
+  width: 30px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none !important;
+  cursor: pointer;
+  z-index: 999;
+}
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: $white;
 }
 .navbar {
   position: fixed;
@@ -30,7 +52,7 @@ body {
 	left: 0;
 	width: 100%;
 	text-align: center;
-  z-index: 25;
+  z-index: 100;
   transition: all 200ms ease-in-out;
   background-color: rgba(0,0,0,0) !important;
 }
@@ -52,8 +74,7 @@ body {
 }
 
 .logo {
-  width: 150px;
-  padding: 0 10px;
+  width: 130px;
   cursor: pointer;
 }
 .logoB {
@@ -72,14 +93,15 @@ padding-top: 5px;
 .nav-link:hover {
  color: $green !important;
 }
-i {
- color: $white;
- cursor: pointer;
- align-self: center;
- margin-left: 15px;
- margin-right: 20px;
+.cart-btn {
+  padding: 0 20px;
+  color: $white;
+  font-size: 16pt;
+  cursor: pointer;
+  z-index: 999;
 }
-i:hover {
+
+.cart-btn:hover {
 color: $green;
 }
 .scroll-up .navbar {
@@ -88,9 +110,12 @@ color: $green;
   justify-content: center;
   filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
 }
-.scroll-up .navbar a {
+.scroll-up .navbar .nav-link {
   color: $dark-blue !important;
   font-weight: 500;
+}
+.scroll-up .line {
+  background-color: $dark-blue;
 }
 .scroll-up .fa-shopping-cart {
   color: $dark-blue;
@@ -107,56 +132,36 @@ color: $green;
 }
 
 //cart
-#cart-btn {
-  display: none;
-}
 .cart_container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
+  position:absolute;
+  right: 0px;
   height: 100vh;
-  transition: right 8s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 999;
+  padding-top: 90px;
+  top:0px;
+  width: 30%;
+  background-color: $black;
+  flex-direction: column;
+  transform: translateX(200%);
+  transition: transform 0.5s ease-in;
 }
-#cart-btn:checked ~ .cart_container {
-  opacity: 1;
-  visibility: visible;
+
+.fa-shopping-cart{
+  z-index: 9999;
 }
-.shopping-cart {
-  width: 100%;
-  max-width: 350px;
-  height: 100vh;
-  background-color: black;
-  position: relative;
-  float: right;
-  transition: right 8s;
+.active {
+  transform: translateX(0%);
 }
-.shopping-cart label {
-  position: absolute;
-  right: 5px;
-  top: 10px;
-}
+
 .cart-title {
   color: $white;
   margin-top: 40px;
 }
-.fa-times {
-    float: right;
-  } 
+
  .cart_container .button {
    margin: 10px;
    padding: 15px;
    transition: all 200ms ease-in-out;
  }
-.shopping-cart a {
-    color: $white;
-    align-self: left;
-    text-decoration: none;
-}  
-  
 
 //MAIN -INDEX
 
@@ -346,6 +351,7 @@ color: $green;
   }
 
 //ALBUM
+
   .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -360,18 +366,6 @@ color: $green;
   overflow: hidden;
   }
   
-.product_img:hover {
-    opacity: 1;
-    -webkit-filter: grayscale(0%);
-    filter: grayscale(0%);
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    transition-timing-function: ease-in;
-    transition: 0.8s;
-    overflow: hidden;
-  }
-
 .card {
   overflow: hidden;
   cursor: pointer;
@@ -380,6 +374,8 @@ color: $green;
 .fruit_title {
   margin-top: -50px;
   margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 300;
 }
 
 //CONT 2 
@@ -391,6 +387,8 @@ color: $green;
 }
 .cont_2-img {
   width: 90%;
+  margin-top: 15px;
+  padding-top: 10px;
 
 }
 
@@ -403,7 +401,7 @@ color: $green;
 .cont_2-parr {
   font-weight: 600;
   margin-right: 25px;
-  color: $white;
+  color: #fff;
   font-size: 24px;
 }
 
@@ -477,7 +475,7 @@ color: $green;
 .footer-text {
   text-align: justify;
   padding: 15px;
-
+  font-size: 12pt;
 }
 #site-footer h6
 {
@@ -488,13 +486,16 @@ color: $green;
   letter-spacing:2px;
   padding: 20px;
 }
-#site-footer a
-{
+#footer-links_cont {
+  padding-left: 80px;
+}
+#site-footer a {
+  font-size: 12pt;
   color:#737373;
 }
 #site-footer a:hover
 {
-  color:#3366cc;
+  color:$green;
   text-decoration:none;
 }
 .footer-links{
@@ -581,9 +582,8 @@ color: $green;
   line-height:34px;
   height:34px;
   width:34px;
-  font-size:14px
+  font-size:10px;
 }
-
 
 
 //PRODUCT PAGE
@@ -602,6 +602,11 @@ color: $green;
   border: #222 solid 1px;
   padding: 5px 10px;
   margin-top: 25px;
+}
+.qty ._btn {
+  border: none;
+  margin: 0 10px;
+  padding: 5px;
 }
 .btn .button {
   margin: 10px;
@@ -625,8 +630,17 @@ color: $green;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 769px) {
+body {
+  overflow-x: hidden;
+};
+.cart_container {
+  width: 50%;
+}
 .logo {
   width: 120px;
+  margin: 0;
+  padding: 0;
+  justify-self: center;
 }
 #container_1-titles {
     margin-top:100px;
@@ -646,36 +660,54 @@ color: $green;
   padding: 20px 20px;
   }
   .container_1-img {
-    width: 70%;
+    width: 50%;
     padding-top: 0;
     margin-top:30px;
     transition-timing-function: ease-in;
     transition: 0.8s;
     }
   .cont_2-title {
-    font-size: 7em;
+    font-size: 6em;
+  }
+  .cont_2-img {
+    width: 90%;
   }
   .cont_2-parr {
     margin: 15px;
+    font-size: 16pt;
+  }
+   #cont_2-text {
+     padding-bottom: 30px;
+   }
+
+  .nav-list{
+    position:absolute;
+    left: 0px;
+    height: 100vh;
+    padding-top: 90px;
+    top:0px;
+    background-color: $black;
+    flex-direction: column;
+    width: 50%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
   }
   .navbar {
-  background-color: #fff !important;
-  height: auto;
-  justify-content: center;
-  filter: drop-shadow(0 -10px 20px rgb(170, 170, 170));
+    justify-content: space-around;
   }
-  .navbar a {
-    color: $dark-blue !important;
+  .navbar-brand {
+    margin: 0;
   }
- .fa-shopping-cart {
-    color: $dark-blue;
+  .nav-btn {
+    display: flex !important;
   }
-.logoB {
-    display: initial;
-    margin-left:30px;
+  .active {
+    transform: translateX(0%);
   }
-.logo {
-    display: none;
+  #footer-links_cont {
+    padding-left: 0;
   }
-
+  .scroll-up .navbar .nav-link {
+    color: $white !important;
+  }
 }

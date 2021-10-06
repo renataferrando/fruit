@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" type="image/jpg" href="img/isologo.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="img/isologo2.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -15,38 +15,37 @@
     <title>FRUIT</title>
 </head>
 <body>
-  <input type="checkbox" id="cart-btn">  
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar">
+    <div class="nav-btn">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
       <a class="navbar-brand" href="#">
         <img src="img/logo4.png" class="logo">
         <img src="img/isologo-black.png" class="logoB">
       </a>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
+      <div class="nav-list d-flex">
          <a class="nav-link" aria-current="page" href="#">Home</a>
          <a class="nav-link" href="#">Productos</a>
          <a class="nav-link" href="#">Contacto</a>
       </div>
-    <div class="cart">
-      <label for="cart-btn"><i class="fas fa-shopping-cart"></i></label>
-   </div> 
-   </div>
-   </nav>  
-   <div class="cart_container">
-    <div class="shopping-cart">
-        <label for="cart-btn"><i class="fas fa-times"></i></label>
+        <div class="cart-btn"> 
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+      <div class="cart_container">
         <h6 class="cart-title">CART</h6>
-      <a href="#" class="button">Checkout</a> <br>
-      <a href="">Vaciar Carrito</a> 
+        <a href="#" class="button">Checkout</a> <br>
+        <ul class="product-list">
+
+        </ul>
+        <a href="">Vaciar Carrito</a> 
     </div>
-  </div> 
+  </nav>  
+    
 <div class="container-fluid" id="main_container">     
-  <div class="row g-0">
-  <div class="col-md-6 col-xs-12 d-flex" id="container_1-titles">
+  <div class="row g-0 justify-content-around">
+  <div class="col-xl-5 col-md-6 col-xs-12 d-flex" id="container_1-titles">
       <h1 class="container_1-title">fruit</h1>
       <h3 class="container_1-subtitle">organic | fresh | natural</h3>
       <div class="button_container">
@@ -75,12 +74,12 @@
         </span>
       </div>    
   </div>
-    <div class="col-md-6 col-xs-12">
+    <div class="col-xl-5 col-md-6 col-xs-12">
       <img src="img/st1.png" alt="" class="container_1-img">
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div id="album-container"class="container-fluid">
 <section class="py-5 text-center container">
   <div class="row g-0 py-lg-5">
     <div class="col-md-6 col-md-8 mx-auto">
@@ -89,7 +88,7 @@
     </div>
   </div>
 </section>
-<div class="album py-5 bg-light">
+<div class="album py-5">
   <div class="container">
     <h3 class="fruit_title">Mixs</h3>
     <div class="row g-0 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -191,10 +190,10 @@
 </div>
 <div class="d-flex align-items-center container-fluid_2">
   <div class="row g-0 justify-content-center">
-    <div class="col-md-6 col-xs-12" data-aos="fade-down" id="cont_2-img">
+    <div class="col-xl-5 col-md-6 col-xs-12" data-aos="fade-down" id="cont_2-img">
         <img src="img/smoot.jpg" class="cont_2-img">
     </div>
-    <div class="col-md-6 col-xs-12" id="cont_2-text">
+    <div class="col-xl-5 col-md-6 col-xs-12" id="cont_2-text">
         <h1 class="cont_2-title" data-aos="fade-up"data-aos-duration="500">Jugos</h1>
         <p class="cont_2-parr" data-aos="fade-up" data-aos-duration="600">Los jugos y licuados son la forma más fácil y rápida de ingerir todos los nutrientes que nos aportan las frutas.</p>
         <section class="btn-container">
@@ -215,8 +214,8 @@
       <div class="col-md-2 col-xs-6" data-aos="fade-left">
         <img class="icon" src="img/icon4.png"></div>
       </div>
-      <div class="row g-0">
-        <div class="col-md-12 col-xs-12" data-aos="zoom-in">
+      <div class="row justify-content-around">
+        <div class="col-xl-10 col-md-12 col-xs-12 text-center" data-aos="zoom-in">
           <p class="cont_3-parr">
             La importancia de consumir productos orgánicos se debe al beneficio que generan para el cuerpo por su cantidad de nutrientes, que no están alterados por ningún químico, conservante, colorante, insecticida, pesticida u hormona como suelen utilizar los alimentos procesados. 
             <br><b>Ayudan a fortalecer el sistema inmunológico, mejorar la calidad del sueño, reducir las posibilidades de desarrollar enfermedades y promueven la pérdida de peso.</b>
@@ -225,16 +224,12 @@
       </div>
     </div>
     <div class="container-fluid_4" id="site-footer">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
+          <div class="row justify-content-around">
+            <div class="col-xl-8 col-xs-12 col-md-8">
               <h6>About</h6>
               <p class="footer-text"><b>The Fruit Market</b> es una distribuidora de frutas orgánicas, cultivadas en el país bajo una práctica ecológica y biológica que toma en cuenta las posibles repercusiones ambientales y sociales, eliminando la utilización de insumos tales como fertilizantes y plaguicidas sintéticos, medicamentos veterinarios, semillas y especies genéticamente modificadas, conservadores, aditivos e irradiación. Las prácticas utilizadas mantienen e incrementan la fertilidad del suelo a largo plazo y evitan la propagación de plagas y enfermedades.</p>
             </div>
-            <div class="col-xs-6 col-md-3">
-              
-            </div>
-  
-            <div class="col-xs-6 col-md-3">
+              <div class="col-xl-4 col-xs-12 col-md-4" id="footer-links_cont">
               <h6>Quick Links</h6>
               <ul class="footer-links">
                 <li><a href=></a>About Us</a></li>
@@ -246,7 +241,7 @@
             </div>
           </div>
           <hr>
-          <div class="row">
+          <div class="row justify-content-around">
             <div class="col-md-8 col-sm-6 col-xs-12">
               <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
            <a href="#"></a>.
