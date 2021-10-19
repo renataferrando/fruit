@@ -1,11 +1,3 @@
-const slide = document.querySelectorAll ('.nav-btn, .cart-btn');
-const cont = document.querySelectorAll('.nav-list, .cart_container')
-slide[0].onclick = () =>{
-  cont[0].classList.toggle('active');
-} 
-slide[1].onclick = () =>{
-  cont[1].classList.toggle('active');
-} 
 
 //NAVBAR 
 const body = document.body;
@@ -28,7 +20,7 @@ window.addEventListener('scroll', () =>{
 })
 
 
-//buton 
+//BUTTON 
 $('.button--bubble').each(function() {
     var $circlesTopLeft = $(this).parent().find('.circle.top-left');
     var $circlesBottomRight = $(this).parent().find('.circle.bottom-right');

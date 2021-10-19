@@ -1,0 +1,38 @@
+[   
+    {"id":1,
+    "nombre": "Cítricos",
+    "descripcion": "Mix de cítricos. Incluye cantidades iguales de naranjas (en variedades de estación) pomelos, limones.",
+    "precio": 150,
+    "imagen": "../img/citric1.jpg"
+    },
+    {"id":2,
+      "nombre": "Frutos Rojos",
+      "descripcion": "Mix de frutos rojos. Incluye cantidades iguales de frutillas, fresas, frambuesas, arandanos, moras.",
+      "precio": 800,
+      "imagen": "../img/redf.jpg"
+    },
+    {"id":3,
+      "nombre": "Tropical",
+      "precio": 250,
+      "descripcion": "Mix de frutas tropicales. Incluye bananas, ananá, mango, papaya, maracuyá.",
+      "imagen": "../img/tropical.jpg"
+    },
+    {"id":4,
+      "nombre": "Water",
+      "precio": 300,
+      "descripcion": "Incluye melón, sandía. El precio es por unidad: bolsón que incluye un melon y una sandía.",
+      "imagen": "../img/water.jpg"
+    },
+    {"id":5,
+      "nombre": "Velvet",
+      "precio": 450,
+      "descripcion": "Mix de duraznos -blanco y amarillo-, pelones. Las variedades cambian según estación.",
+      "imagen": "../img/peaches.jpg"
+    }, 
+    {"id":6,
+      "nombre": "Green",
+      "precio": 250,
+      "descripcion": "Mix de lima, manzana verde, peras, kiwis, aguacate. Puede incluir fruta estrella según estación.",
+      "imagen":"../img/verde.jpg"
+    }
+  ]

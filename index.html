@@ -15,7 +15,7 @@
     <title>FRUIT</title>
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-btn">
       <div class="line"></div>
       <div class="line"></div>
@@ -29,18 +29,38 @@
          <a class="nav-link" aria-current="page" href="#">Home</a>
          <a class="nav-link" href="#">Productos</a>
          <a class="nav-link" href="#">Contacto</a>
-      </div>
+         </div>
         <div class="cart-btn"> 
-          <i class="fas fa-shopping-cart"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+          <div class="dot"></div>
         </div>
       <div class="cart_container">
-        <h6 class="cart-title">CART</h6>
-        <a href="#" class="button">Checkout</a> <br>
-        <ul class="product-list">
-
-        </ul>
-        <a href="">Vaciar Carrito</a> 
-    </div>
+        <button type="button" class="cart-close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="cart-title">CART</h5>
+        <hr>
+        <div class="product-list" id="products-cart">       
+          <template id="template-cart-product">
+              <h6>Mix Citricos</h6>
+              <p>$<small class="precio">$150/kg</small></p>
+              <button class="btn-add">+</button>
+              <span class="qty">0</span>
+              <button class="btn-sup">-</button>
+              <button class="btn-trash"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg></button>
+                <hr>
+            </template>    
+        </div>
+        <div class="check-out">
+          <button class="button">Checkout</button> <br>
+          <button href="" class="clear_btn">Vaciar Carrito</button>
+        </div>
+      </div> 
   </nav>  
     
 <div class="container-fluid" id="main_container">     
@@ -91,25 +111,26 @@
 <div class="album py-5">
   <div class="container">
     <h3 class="fruit_title">Mixs</h3>
-    <div class="row g-0 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card shadow-sm">
-            <img src="img/citric1.jpg" class="product_img">
-          <div class="card-body">
+    <div class="row g-0 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="productos-home">
+      <template id="template-card">
+        <div class="col">
+         <div class="card shadow-sm">
+            <img src="" class="card-img-top">
+          <div class="card-body" id="producto">
             <h3>Cítricos</h3>
             <p class="card-text">Mix de cítricos. Incluye cantidades iguales de naranjas (en variedades de estación) pomelos, limones.</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Ver más</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Añadir al Carrito</button>
               </div>
-              <small class="text-muted">$150/kg</small>
+              <p>$<small class="precio">$150/kg</small></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card shadow-sm">
+    </template>
+      <!--<div class="col">
+        <div class="card shadow-sm" id="producto1">
           <img src="img/redf.jpg">
           <div class="card-body">
             <h3>Frutos rojos</h3>
@@ -118,7 +139,7 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">Ver más</button>
               </div>
-              <small class="text-muted">$800/kg</small>
+              <small id="buy-btn_producto1"class="precio">$800/kg</small>
             </div>
           </div>
         </div>
@@ -133,7 +154,7 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">Ver más</button>
               </div>
-              <small class="text-muted">$250/kg</small>
+              <small class="precio">$250/kg</small>
             </div>
           </div>
         </div>
@@ -149,7 +170,7 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">Ver más</button>
               </div>
-              <small class="text-muted">$300</small>
+              <small class="precio">$300</small>
             </div>
           </div>
         </div>
@@ -164,7 +185,7 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">Ver más</button>
               </div>
-              <small class="text-muted">$450/kg</small>
+              <small class="precio">$450/kg</small>
             </div>
           </div>
         </div>
@@ -183,7 +204,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
@@ -270,6 +291,7 @@
 <script>
   AOS.init();
 </script>
+<script src="js/productos.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
