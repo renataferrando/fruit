@@ -133,14 +133,16 @@ body {
   position: absolute;
   right: 0px;
   min-height: 100vh;
-  max-height: auto;
+  max-height: 100vh;
   padding-top: 40px;
   top: 0px;
   width: 30%;
   background-color: #333;
   flex-direction: column;
   transform: translateX(200%);
-  transition: transform 0.5s ease-in; }
+  transition: transform 0.5s ease-in;
+  overflow-y: scroll;
+  padding-bottom: 40px; }
 
 .fa-shopping-cart {
   z-index: 9999; }
@@ -196,6 +198,7 @@ body {
   cursor: pointer;
   border: none;
   color: white;
+  position: absolute;
   top: 0;
   right: 0; }
 
