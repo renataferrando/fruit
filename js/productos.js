@@ -68,11 +68,9 @@ productoCarro.addEventListener('click', e =>{
 const addCart = e => {
     if(e.target.classList.contains('btn')) {    
     inCart(e.target.parentElement.parentElement.parentElement)
-    cartContainer.classList.toggle ('active') //tambien lo cierra cuando incorporo, como podría hacer?
+    cartContainer.classList.add ('active') 
     }
-    else if (cartProducts != null){
-        cartContainer.classList.remove('active') //no funciona
-    }
+ 
 
     e.stopPropagation()
 }
@@ -106,6 +104,7 @@ const showInCart = () => {
         productCart.querySelector('span').textContent = producto.cantidad
         productCart.querySelector('.btn-sup').dataset.id = producto.id
         productCart.querySelector('.btn-trash').dataset.id = producto.id
+        productCart.querySelector('.bi-trash').dataset.id = producto.id
         
         const clone = productCart.cloneNode(true)
         fragment.appendChild(clone)   
@@ -131,8 +130,22 @@ clearCart.addEventListener ('click', ()=> {
 //VARIAR CANTIDAD 
 
 const qtyValue = e => {
-    if(e.target.classList.contains('btn-trash')) {
-        const item = cartProducts[e.target.dataset.id]
-        delete cartProducts[e.target.dataset.id]
+    if(e.target.classList.contains('btn-add')) {
+        const item  = cartProducts[e.target.dataset.id]
+        item.cantidad ++
+        cartProducts [e.target.dataset.id] = {...item}
+        showInCart()
     }
+    if(e.target.classList.contains('btn-sup')) {
+        const item  = cartProducts[e.target.dataset.id]
+        item.cantidad --
+        if (item.cantidad === 0) {
+            delete cartProducts[e.target.dataset.id]
+        }
+        showInCart()
+    }
+    if (e.target.classList.contains('bi-trash')) {
+            delete cartProducts[e.target.dataset.id]
+        }
+        showInCart()
 }
