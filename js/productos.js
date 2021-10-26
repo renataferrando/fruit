@@ -7,7 +7,7 @@ const cartContainer = document.querySelector('.cart_container')
 let cartProducts = {}
 const productoCarro = document.querySelector('#products-cart');
 const productosLocal = JSON.parse(localStorage.getItem("cart"));
-
+const totalPrice = document.querySelector('.total')
 
 //SLIDE NAV & CART
 const slide = document.querySelectorAll ('.nav-btn, .cart-btn, .cart-close');
@@ -112,13 +112,24 @@ const showInCart = () => {
 
     productoCarro.appendChild(fragment)
 
-  
-   
+    showTotalPrice ()
 
-//AÑADIR CANTIDAD    
-const qty = Object.values(cartProducts).reduce((acc, {cantidad})=> acc + cantidad, 0) 
-const precio = Object.values(cartProducts).reduce((acc, {precio, cantidad})=> acc + cantidad * precio, 0)
 }
+//PRECIO TOTAL
+
+const showTotalPrice = () => {
+    const qty = Object.values(cartProducts).reduce((acc, {cantidad})=> acc + cantidad, 0) 
+    const precio = Object.values(cartProducts).reduce((acc, {precio, cantidad})=> acc + cantidad * precio, 0)
+    
+    totalPrice.innerHTML='Total: '
+    const total = document.createElement('span')
+    total.className = "total"
+    total.innerHTML = `<span class ="total-price">
+                        ${precio}
+                        </span>`
+    totalPrice.appendChild(total)
+}
+
 
 //VACIAR CARRITO    
 clearCart.addEventListener ('click', ()=> {
@@ -146,6 +157,7 @@ const qtyValue = e => {
     }
     if (e.target.classList.contains('bi-trash')) {
             delete cartProducts[e.target.dataset.id]
-        }
+
+        }  
         showInCart()
 }
