@@ -136,6 +136,26 @@ html, body {
   overflow-y: scroll;
   padding-bottom: 40px; }
 
+.cart_container::-webkit-scrollbar {
+  -webkit-appearance: none; }
+
+.cart_container::-webkit-scrollbar:vertical {
+  width: 7px; }
+
+.cart_containercart_container::-webkit-scrollbar-button:increment, .contenedor::-webkit-scrollbar-button {
+  display: none; }
+
+.cart_container::-webkit-scrollbar:horizontal {
+  height: 10px; }
+
+.cart_container::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 20px;
+  border: 1px solid #222; }
+
+.cart_container::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
 .fa-shopping-cart {
   z-index: 9999; }
 
@@ -605,7 +625,7 @@ html, body {
   .button {
     padding: 20px 20px; }
   .container_1-img {
-    width: 60%;
+    width: 70%;
     padding-top: 0;
     margin-top: 30px;
     transition-timing-function: ease-in;
