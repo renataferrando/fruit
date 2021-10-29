@@ -8,29 +8,34 @@ let cartProducts = {}
 const productoCarro = document.querySelector('#products-cart');
 const productosLocal = JSON.parse(localStorage.getItem("cart"));
 const totalPrice = document.querySelector('.total')
-
-//SLIDE NAV & CART
-const slide = document.querySelectorAll ('.nav-btn, .cart-btn, .cart-close');
+const clearCart = document.querySelector('.clear_btn')
 const nav = document.querySelector('.nav-list')
 const checkout = document.querySelector('.button')
-const clearCart = document.querySelector('.clear_btn')
+
+
+
+//SLIDE NAV & CART
+const slide = document.querySelectorAll('.slide-cont');
+console.log(slide)
 
 
 slide[0].onclick = () =>{
   nav.classList.toggle('active');
-  if(nav.classList.contains('active')){
-    slide[0].style.transform = "translateX(-50px)"
-  }
-  else {
-    slide[0].style.transform = "translateX(0px)" 
-  }
 } 
-slide[1].onclick = () =>{
+slide[1].onclick = () => {
+    nav.classList.toggle('active');
+}
+slide[2].onclick = () =>{
   cartContainer.classList.toggle('active');
 } 
-slide[2].onclick = () =>{
+slide[3].onclick = () =>{
     cartContainer.classList.toggle('active');
-  } 
+} 
+
+
+
+
+//GETTIN DATA
   
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
@@ -71,15 +76,17 @@ productoCarro.addEventListener('click', e =>{
     qtyValue(e)
 })
 
+
+
 const addCart = e => {
     if(e.target.classList.contains('btn')) {    
     inCart(e.target.parentElement.parentElement.parentElement)
     cartContainer.classList.add ('active') 
     }
- 
-
     e.stopPropagation()
 }
+
+
 //PRODUCTO EN CARRITO
 const inCart = objeto => {
     const productoInCart = {
@@ -144,7 +151,8 @@ clearCart.addEventListener ('click', ()=> {
     showInCart()
 })
 
-//VARIAR CANTIDAD 
+
+//BOTONES NAV
 
 const qtyValue = e => {
     if(e.target.classList.contains('btn-add')) {
@@ -164,6 +172,7 @@ const qtyValue = e => {
     if (e.target.classList.contains('bi-trash')) {
             delete cartProducts[e.target.dataset.id]
 
-        }  
+        }
         showInCart()
+
 }

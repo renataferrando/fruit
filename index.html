@@ -16,7 +16,7 @@
 </head>
 <body>
   <nav class="navbar" id="navbar">
-    <div class="nav-btn">
+    <div class="slide-cont" id="nav-btn">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -26,18 +26,21 @@
         <img src="img/isologo-black.png" class="logoB">
       </a>
       <div class="nav-list d-flex">
+        <button type="button" class="slide-cont" id="menu-close"aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
          <a class="nav-link" aria-current="page" href="#">Home</a>
          <a class="nav-link" href="#">Productos</a>
          <a class="nav-link" href="#">Contacto</a>
-         </div>
-        <div class="cart-btn"> 
+      </div>
+        <div id="cart-btn" class="slide-cont"> 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
           </svg>
           <div class="dot"></div>
         </div>
       <div class="cart_container">
-        <button type="button" class="cart-close" aria-label="Close">
+        <button type="button" class="slide-cont" id="cart-close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         <h5 class="cart-title">Carrito</h5>

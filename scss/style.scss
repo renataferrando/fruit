@@ -27,14 +27,14 @@ html, body {
 
 
 //NAV
-.nav-btn {
+#nav-btn {
   width: 30px;
   height: 25px;
   flex-direction: column;
   justify-content: space-between;
   display: none !important;
   cursor: pointer;
-  z-index: 999;
+
 }
 .line {
   width: 100%;
@@ -56,6 +56,13 @@ html, body {
   height: 3px;
   background-color: $dark-blue;
 }
+#menu-close {
+  display: none;
+}
+.show {
+  display: initial;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -107,14 +114,14 @@ padding-top: 5px;
 .nav-link:hover {
  color: $text !important;
 }
-.cart-btn {
+#cart-btn {
   padding: 0 20px;
   color: $white;
   font-size: 16pt;
   cursor: pointer;
 }
 
-.cart-btn:hover {
+#cart-btn:hover {
 color: $text
 }
 .scroll-up .navbar {
@@ -227,7 +234,7 @@ color: $text
   background-color: #F94646;
   width: 30px;
 }
-.cart-close {
+#cart-close {
   display: flex;
   padding: 0 20px;
   background-color: $black;
@@ -238,6 +245,9 @@ color: $text
   position: absolute;
   top: 0;
   right: 0;
+}
+#cart-close span {
+  font-size: 55px;
 }
 
 //MAIN -INDEX
@@ -729,8 +739,12 @@ color: $text
   padding: 0;
   justify-self: center;
 }
-.cart-close span {
-  font-size: 35px;
+#cart-close span {
+  font-size: 55px;
+}
+#cart-close {
+  top: 10px;
+  right: 20px;
 }
 #container_1-titles {
     margin-top:100px;
@@ -782,13 +796,26 @@ color: $text
     transform: translateX(-100%);
     transition: transform 0.5s ease-in;
   }
+  .nav-list #menu-close {
+    display: initial;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: $black;
+    cursor: pointer;
+    border:  none;
+    color: white;
+  }
+  #menu-close span {
+    font-size: 55px;
+  }
   .navbar {
     justify-content: space-around;
   }
   .navbar-brand {
     margin: 0;
   }
-  .nav-btn {
+  #nav-btn {
     display: flex !important;
   }
   .active {
