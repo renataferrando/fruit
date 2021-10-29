@@ -181,9 +181,7 @@ color: $text
 .cart_container::-webkit-scrollbar-track {
   border-radius: 10px;  
 }
-.fa-shopping-cart {
-  z-index: 9999;
-}
+
 
 .active {
   transform: translateX(0%);

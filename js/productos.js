@@ -18,6 +18,12 @@ const clearCart = document.querySelector('.clear_btn')
 
 slide[0].onclick = () =>{
   nav.classList.toggle('active');
+  if(nav.classList.contains('active')){
+    slide[0].style.transform = "translateX(-50px)"
+  }
+  else {
+    slide[0].style.transform = "translateX(0px)" 
+  }
 } 
 slide[1].onclick = () =>{
   cartContainer.classList.toggle('active');
