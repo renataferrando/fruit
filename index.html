@@ -29,9 +29,9 @@
         <button type="button" class="slide-cont" id="menu-close"aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-         <a class="nav-link" aria-current="page" href="#">Home</a>
+         <a class="nav-link" aria-current="page" href="#main_container">Home</a>
          <a class="nav-link" href="#">Productos</a>
-         <a class="nav-link" href="#">Contacto</a>
+         <a class="nav-link" href="#site-footer">Contacto</a>
       </div>
         <div id="cart-btn" class="slide-cont"> 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -39,36 +39,36 @@
           </svg>
           <div class="dot"></div>
         </div>
-      <div class="cart_container">
-        <button type="button" class="slide-cont" id="cart-close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h5 class="cart-title">Carrito</h5>
-        <hr>
-        <div class="product-list" id="products-cart">       
-          <template id="template-cart-product">
-              <h6>Mix Citricos</h6>
-              <p>$<small class="precio">$150/kg</small></p>
-              <button class="btn-add">+</button>
-              <span class="qty">0</span>
-              <button class="btn-sup">-</button>
-              <button class="btn-trash"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                </svg></button>
-                <hr>
-            </template>    
-        </div>
-        <div class="check-out">
-          <h5 class="total">Total: 
-            <span class="total-price"></span>
-          </h5>
-          <button class="button">Checkout</button> <br>
-          <button href="" class="clear_btn">Vaciar Carrito</button>
-          <br>
-        </div>
-      </div> 
   </nav>  
+  <div class="cart_container">
+    <button type="button" class="slide-cont" id="cart-close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h5 class="cart-title">Carrito</h5>
+    <hr>
+    <div class="product-list" id="products-cart">       
+      <template id="template-cart-product">
+          <h6>Mix Citricos</h6>
+          <p>$<small class="precio">$150/kg</small></p>
+          <button class="btn-add">+</button>
+          <span class="qty">0</span>
+          <button class="btn-sup">-</button>
+          <button class="btn-trash"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+            </svg></button>
+            <hr>
+        </template>    
+    </div>
+    <div class="check-out">
+      <h5 class="total">Total: 
+        <span class="total-price"></span>
+      </h5>
+      <button class="button">Checkout</button> <br>
+      <button href="" class="clear_btn">Vaciar Carrito</button>
+      <br>
+    </div>
+  </div> 
     
 <div class="container-fluid" id="main_container">     
   <div class="row g-0 justify-content-around">

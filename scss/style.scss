@@ -80,18 +80,25 @@ html, body {
 }
 
 .navbar_p {
+  color: $dark-blue;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2);
   align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 70px;
  }
 .navbar_p .nav-link {
   color: $dark-blue;
   font-weight: 500;
 }
-.navbar_p i {
+.navbar_p svg {
   color: $dark-blue;
 }
 .navbar_p i:hover{
   color: $lightergray;
+}
+.logo-p {
+  width: 70%;
 }
 .logo {
   margin-left: 10px;
@@ -102,10 +109,6 @@ html, body {
  display: none;
  width: 50px;
  cursor: pointer;
-}
-.logo_p {
-width: 130px;
-padding-top: 5px;
 }
 
 .nav-link {
@@ -167,6 +170,7 @@ color: $text
   transition: transform 0.5s ease-in;
   overflow-y: scroll;
   padding-bottom: 40px;
+  z-index: 1000;
 }
 .cart_container::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -203,6 +207,9 @@ color: $text
   border: 0;
   background-color: rgba(0,0,0,0);
   color: $white;
+}
+.clear_btn:hover {
+  color: #F94646;
 }
  .cart_container .button {
    margin: 10px;

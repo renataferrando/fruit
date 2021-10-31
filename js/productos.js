@@ -6,7 +6,6 @@ const addCartBtn = document.querySelector('.btn')
 const cartContainer = document.querySelector('.cart_container')
 let cartProducts = {}
 const productoCarro = document.querySelector('#products-cart');
-const productosLocal = JSON.parse(localStorage.getItem("cart"));
 const totalPrice = document.querySelector('.total')
 const clearCart = document.querySelector('.clear_btn')
 const nav = document.querySelector('.nav-list')
@@ -32,13 +31,14 @@ slide[3].onclick = () =>{
     cartContainer.classList.toggle('active');
 } 
 
-
-
-
 //GETTIN DATA
   
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
+    if(localStorage.getItem('productos-cart'))
+    cartProducts = JSON.parse(localStorage.getItem('productos-cart'))
+   
+    showInCart()
 })
 
 const fetchData = async () => {
@@ -66,8 +66,6 @@ const showProducts = (data) =>{
     productosHome.appendChild(fragment)
 }
 
-
-
 //CAPTA CADA ELEMENTO
 productosHome.addEventListener('click', e => {
     addCart(e)
@@ -75,8 +73,6 @@ productosHome.addEventListener('click', e => {
 productoCarro.addEventListener('click', e =>{
     qtyValue(e)
 })
-
-
 
 const addCart = e => {
     if(e.target.classList.contains('btn')) {    
@@ -126,14 +122,14 @@ const showInCart = () => {
     productoCarro.appendChild(fragment)
 
     showTotalPrice ()
-
+    localStorage.setItem('productos-cart', JSON.stringify(cartProducts))
 }
 //PRECIO TOTAL
 
 const showTotalPrice = () => {
     const qty = Object.values(cartProducts).reduce((acc, {cantidad})=> acc + cantidad, 0) 
     const precio = Object.values(cartProducts).reduce((acc, {precio, cantidad})=> acc + cantidad * precio, 0)
-    
+
     totalPrice.innerHTML='Total: '
     const total = document.createElement('span')
     total.className = "total"
@@ -142,6 +138,7 @@ const showTotalPrice = () => {
                         </span>`
     totalPrice.appendChild(total)
 }
+
 
 
 //VACIAR CARRITO    
@@ -171,8 +168,7 @@ const qtyValue = e => {
     }
     if (e.target.classList.contains('bi-trash')) {
             delete cartProducts[e.target.dataset.id]
-
         }
+        
         showInCart()
-
 }
