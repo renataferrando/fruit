@@ -72,6 +72,7 @@ html, body {
   z-index: 100;
   transition: all 200ms ease-in-out;
   background-color: rgba(0,0,0,0) !important;
+  justify-content: space-around;
 }
 .navbar a {
   font-weight: 500;
@@ -263,10 +264,11 @@ color: $text
     height: 790px; 
     padding: 0; 
 }
+#main-cont-row {
+  padding-top: 200px;
+}
 .container_1-img {
-    width: 80%;
-    padding-top: 50px;
-    margin-top:60px;
+    width: 75%;
     transition-timing-function: ease-in;
     transition: 0.8s;
     }
@@ -284,8 +286,6 @@ color: $text
     }
 
 #container_1-titles {
-    margin-top:50px;
-    padding-top: 20px;
     color: $white;
     align-self: center;
     flex-direction: column;
@@ -462,7 +462,10 @@ color: $text
 .card {
   overflow: hidden;
   cursor: pointer;
-  
+  height: 480px;
+}
+#btn-price-div {
+  align-items:baseline;
 }
 .fruit_title {
   margin-top: -50px;
@@ -709,7 +712,8 @@ color: $text
 @media (min-width: 768px) {
    .bd-placeholder-img-lg {
     font-size: 3.5rem;
-  }  
+  }
+  
   .social-icons li.title
   {
     display:block;
@@ -737,8 +741,9 @@ color: $text
   transform: translateX(200%);
   transition: transform 0.5s ease-in;
 }
-
-
+.card {
+  height: auto;
+}
 .logo {
   width: 120px;
   margin-left: 15px;
@@ -752,9 +757,7 @@ color: $text
   top: 10px;
   right: 20px;
 }
-#container_1-titles {
-    margin-top:100px;
-}
+
 .container_1-title {
     font-size: 7em;
     margin-left: 0
@@ -770,11 +773,7 @@ color: $text
   padding: 20px 20px;
   }
   .container_1-img {
-    width: 70%;
-    padding-top: 0;
-    margin-top:30px;
-    transition-timing-function: ease-in;
-    transition: 0.8s;
+   display: none;
     }
   .cont_2-title {
     font-size: 6em;

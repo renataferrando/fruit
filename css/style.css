@@ -50,7 +50,8 @@ html, body {
   text-align: center;
   z-index: 100;
   transition: all 200ms ease-in-out;
-  background-color: rgba(0, 0, 0, 0) !important; }
+  background-color: rgba(0, 0, 0, 0) !important;
+  justify-content: space-around; }
 
 .navbar a {
   font-weight: 500;
@@ -230,10 +231,11 @@ html, body {
   height: 790px;
   padding: 0; }
 
+#main-cont-row {
+  padding-top: 200px; }
+
 .container_1-img {
-  width: 80%;
-  padding-top: 50px;
-  margin-top: 60px;
+  width: 75%;
   transition-timing-function: ease-in;
   transition: 0.8s; }
 
@@ -249,8 +251,6 @@ html, body {
   overflow: visible; }
 
 #container_1-titles {
-  margin-top: 50px;
-  padding-top: 20px;
   color: #f2e9db;
   align-self: center;
   flex-direction: column;
@@ -385,7 +385,11 @@ html, body {
 
 .card {
   overflow: hidden;
-  cursor: pointer; }
+  cursor: pointer;
+  height: 480px; }
+
+#btn-price-div {
+  align-items: baseline; }
 
 .fruit_title {
   margin-top: -50px;
@@ -616,6 +620,8 @@ html, body {
     flex-direction: column;
     transform: translateX(200%);
     transition: transform 0.5s ease-in; }
+  .card {
+    height: auto; }
   .logo {
     width: 120px;
     margin-left: 15px;
@@ -626,8 +632,6 @@ html, body {
   #cart-close {
     top: 10px;
     right: 20px; }
-  #container_1-titles {
-    margin-top: 100px; }
   .container_1-title {
     font-size: 7em;
     margin-left: 0; }
@@ -639,11 +643,7 @@ html, body {
   .button {
     padding: 20px 20px; }
   .container_1-img {
-    width: 70%;
-    padding-top: 0;
-    margin-top: 30px;
-    transition-timing-function: ease-in;
-    transition: 0.8s; }
+    display: none; }
   .cont_2-title {
     font-size: 6em; }
   .cont_2-img {
