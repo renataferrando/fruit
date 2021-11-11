@@ -15,22 +15,19 @@ const checkoutBtn = document.querySelector('.button');
 
 
 //SLIDE NAV & CART
-const slide = document.querySelectorAll('.slide-cont');
-console.log(slide)
+const slideCart = document.querySelectorAll('.slide-cont');
+const slideNav = document.querySelectorAll('.slide-nav')
+for (let i = 0; i < slideCart.length; i ++) {
+    slideCart [i].addEventListener('click', () => {
+        cartContainer.classList.toggle('active');
+    })
+  } 
 
-
-slide[0].onclick = () =>{
-  nav.classList.toggle('active');
-} 
-slide[1].onclick = () => {
-    nav.classList.toggle('active');
-}
-slide[2].onclick = () =>{
-  cartContainer.classList.toggle('active');
-} 
-slide[3].onclick = () =>{
-    cartContainer.classList.toggle('active');
-} 
+  for (let i = 0; i < slideNav.length; i ++) {
+    slideNav [i].addEventListener('click', () => {
+        nav.classList.toggle('active');
+    })
+  } 
 
 //GETTIN DATA
   
