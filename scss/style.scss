@@ -207,6 +207,7 @@ color: $text
   border: 0;
   background-color: rgba(0,0,0,0);
   color: $white;
+  font-size: 20px;
 }
 .clear_btn:hover {
   color: #F94646;
@@ -255,6 +256,9 @@ color: $text
 }
 #cart-close span {
   font-size: 55px;
+}
+.precio {
+  font-size: 18px;
 }
 
 //MAIN -INDEX
@@ -682,32 +686,24 @@ color: $text
 }
 
 
-//PRODUCT PAGE
-.img-p {
-  width: 500px;
+
+/*CHECKOUT PAGE*/
+.cho {
+  padding: 40px;
 }
-#cont_product {
-  margin-top: 60px;
+.aviso-empty {
+  padding: 40px;
 }
-#product-img {
-  background-color: $yellow;
-  height: 450px;
-  align-items: center;
-  }
-.btn-comprar {
-  border: #222 solid 1px;
-  padding: 5px 10px;
-  margin-top: 25px;
+#checkout-products h5 {
+  margin-top: 20px;
 }
-.qty ._btn {
-  border: none;
-  margin: 0 10px;
-  padding: 5px;
+.checkout-items {
+  display: inline-flex;
 }
-.btn .button {
-  margin: 10px;
-   padding: 15px;
+.checkout-items p {
+  margin: 0 0 0 15px;
 }
+
 
 @media (min-width: 768px) {
    .bd-placeholder-img-lg {

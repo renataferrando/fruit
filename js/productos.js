@@ -1,15 +1,16 @@
+
 const productosHome = document.querySelector('#productos-home');
 const productCont = document.querySelector('#template-card').content;
 const productCart = document.querySelector('#template-cart-product').content;
 const fragment = document.createDocumentFragment();
-const addCartBtn = document.querySelector('.btn')
-const cartContainer = document.querySelector('.cart_container')
-let cartProducts = {}
+const addCartBtn = document.querySelector('.btn');
+const cartContainer = document.querySelector('.cart_container');
+let cartProducts = {};
 const productoCarro = document.querySelector('#products-cart');
-const totalPrice = document.querySelector('.total')
-const clearCart = document.querySelector('.clear_btn')
-const nav = document.querySelector('.nav-list')
-const checkout = document.querySelector('.button')
+const totalPrice = document.querySelector('.total');
+const clearCart = document.querySelector('.clear_btn');
+const nav = document.querySelector('.nav-list');
+const checkoutBtn = document.querySelector('.button');
 
 
 
@@ -51,6 +52,7 @@ const fetchData = async () => {
         console.log(error)
     }
 }
+
 
 //MOSTRAR CARDS PRODUCTOS EN HOME
 const showProducts = (data) =>{
@@ -107,7 +109,7 @@ const inCart = objeto => {
 const showInCart = () => {
     productoCarro.innerHTML=''
     Object.values(cartProducts).forEach(producto =>{
-        productCart.querySelector('h6').textContent = producto.nombre
+        productCart.querySelector('h5').textContent = producto.nombre
         productCart.querySelector('small').textContent = producto.cantidad * producto.precio
         productCart.querySelector('.btn-add').dataset.id = producto.id
         productCart.querySelector('span').textContent = producto.cantidad
@@ -170,5 +172,6 @@ const qtyValue = e => {
             delete cartProducts[e.target.dataset.id]
         }
         
-        showInCart()
+showInCart()
 }
+

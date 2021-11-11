@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>FRUIT</title>
 </head>
-<body>
+<body id="main">
   <nav class="navbar" id="navbar">
     <div class="slide-cont" id="nav-btn">
       <div class="line"></div>
@@ -48,7 +48,7 @@
     <hr>
     <div class="product-list" id="products-cart">       
       <template id="template-cart-product">
-          <h6>Mix Citricos</h6>
+          <h5>Mix Citricos</h5>
           <p>$<small class="precio">$150/kg</small></p>
           <button class="btn-add">+</button>
           <span class="qty">0</span>
@@ -64,7 +64,7 @@
       <h5 class="total">Total: 
         <span class="total-price"></span>
       </h5>
-      <button class="button">Checkout</button> <br>
+      <a href="checkout.html"><button class="button">Checkout</button></a> <br>
       <button href="" class="clear_btn">Vaciar Carrito</button>
       <br>
     </div>
@@ -224,6 +224,7 @@
   AOS.init();
 </script>
 <script src="js/productos.js"></script>
+<script src="js/checkout.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

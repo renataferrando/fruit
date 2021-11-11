@@ -176,7 +176,8 @@ html, body {
 .clear_btn {
   border: 0;
   background-color: rgba(0, 0, 0, 0);
-  color: #f2e9db; }
+  color: #f2e9db;
+  font-size: 20px; }
 
 .clear_btn:hover {
   color: #F94646; }
@@ -225,6 +226,9 @@ html, body {
 
 #cart-close span {
   font-size: 55px; }
+
+.precio {
+  font-size: 18px; }
 
 #main_container {
   background-image: url(../img/bg4.jpg);
@@ -572,30 +576,21 @@ html, body {
   width: 34px;
   font-size: 10px; }
 
-.img-p {
-  width: 500px; }
+/*CHECKOUT PAGE*/
+.cho {
+  padding: 40px; }
 
-#cont_product {
-  margin-top: 60px; }
+.aviso-empty {
+  padding: 40px; }
 
-#product-img {
-  background-color: #FFC72C;
-  height: 450px;
-  align-items: center; }
+#checkout-products h5 {
+  margin-top: 20px; }
 
-.btn-comprar {
-  border: #222 solid 1px;
-  padding: 5px 10px;
-  margin-top: 25px; }
+.checkout-items {
+  display: inline-flex; }
 
-.qty ._btn {
-  border: none;
-  margin: 0 10px;
-  padding: 5px; }
-
-.btn .button {
-  margin: 10px;
-  padding: 15px; }
+.checkout-items p {
+  margin: 0 0 0 15px; }
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
