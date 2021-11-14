@@ -590,20 +590,38 @@ html, body {
   font-size: 10px; }
 
 /*CHECKOUT PAGE*/
-.cho {
-  padding: 40px; }
+.cho-container-fluid {
+  min-height: 80vh; }
+
+#resumen-cont, #tus-productos-cont {
+  margin-top: 80px; }
 
 .aviso-empty {
   padding: 40px; }
 
 #checkout-products h5 {
-  margin-top: 20px; }
+  padding-top: 20px; }
 
 .checkout-items {
   display: inline-flex; }
 
 .checkout-items p {
   margin: 0 0 0 15px; }
+
+.pagar {
+  padding-top: 20px;
+  font-size: 20px; }
+
+.ch-img {
+  height: 100vh;
+  background-image: url(../img/fruit2.jpg);
+  background-size: cover; }
+
+.paybtn {
+  color: white;
+  background-color: #333;
+  padding: 8px 18px;
+  border: 1px solid #333; }
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
@@ -661,6 +679,9 @@ html, body {
     font-size: 16pt; }
   #cont_2-text {
     padding-bottom: 30px; }
+  .navbar_p .nav-link {
+    color: #f2e9db;
+    font-weight: 500; }
   .nav-list {
     position: absolute;
     left: 0px;

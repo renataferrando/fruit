@@ -4,30 +4,13 @@ const productCont = document.querySelector('#template-card').content;
 const productCart = document.querySelector('#template-cart-product').content;
 const fragment = document.createDocumentFragment();
 const addCartBtn = document.querySelector('.btn');
-const cartContainer = document.querySelector('.cart_container');
 let cartProducts = {};
 const productoCarro = document.querySelector('#products-cart');
 const totalPrice = document.querySelector('.total');
 const clearCart = document.querySelector('.clear_btn');
-const nav = document.querySelector('.nav-list');
 const checkoutBtn = document.querySelector('.button');
 
 
-
-//SLIDE NAV & CART
-const slideCart = document.querySelectorAll('.slide-cont');
-const slideNav = document.querySelectorAll('.slide-nav')
-for (let i = 0; i < slideCart.length; i ++) {
-    slideCart [i].addEventListener('click', () => {
-        cartContainer.classList.toggle('active');
-    })
-  } 
-
-  for (let i = 0; i < slideNav.length; i ++) {
-    slideNav [i].addEventListener('click', () => {
-        nav.classList.toggle('active');
-    })
-  } 
 
 //GETTIN DATA
   
@@ -171,4 +154,5 @@ const qtyValue = e => {
         
 showInCart()
 }
+
 

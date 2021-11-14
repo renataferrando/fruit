@@ -21,6 +21,22 @@ window.addEventListener('scroll', () =>{
 	lastScroll =  currentScroll;  
 })
 
+//SLIDE NAV & CART
+const nav = document.querySelector('.nav-list');
+const cartContainer = document.querySelector('.cart_container');
+const slideCart = document.querySelectorAll('.slide-cont');
+const slideNav = document.querySelectorAll('.slide-nav')
+for (let i = 0; i < slideCart.length; i ++) {
+    slideCart [i].addEventListener('click', () => {
+        cartContainer.classList.toggle('active');
+    })
+  } 
+
+  for (let i = 0; i < slideNav.length; i ++) {
+    slideNav [i].addEventListener('click', () => {
+        nav.classList.toggle('active');
+    })
+  } 
 
 //BUTTON 
 $('.button--bubble').each(function() {
@@ -70,3 +86,5 @@ $('.button--bubble').each(function() {
     });
   });
 
+
+  console.log("hola")
