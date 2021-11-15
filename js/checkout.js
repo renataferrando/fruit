@@ -4,7 +4,6 @@ const checkoutProducts = document.querySelector('#checkout-products')
 const resumen = document.querySelector('#resumen')
 checkoutProducts.innerHTML = ''
 
-console.log(dataProds)
 
 const calcularCostoProductos = () =>{
     const precio = dataProds.reduce((acc, {precio, cantidad}) => acc + cantidad * precio,0)
@@ -18,17 +17,20 @@ const calcularCostoProductos = () =>{
         let precioCero = true
     }
     else if (precio === 0) {
-        envio = ''
+        envio = '0'
     }
 
     const costoEnvio = document.createElement('p')
-    costoEnvio.innerHTML = `Costo de envío: ${envio}`
+    costoEnvio.innerHTML = `Costo de envío: $${envio}`
     resumen.appendChild(costoEnvio)
 
     const CalculoCostoTotal = () => {
         let finalTotal =  precio + 200
         if(precio >= 2000) {
             finalTotal = precio + 0
+        }
+        else if (precio === 0) {
+            finalTotal = 0
         }
         const precioFinal = document.createElement('p')
         precioFinal.innerHTML= `Total a pagar: $${finalTotal}`
@@ -38,8 +40,6 @@ const calcularCostoProductos = () =>{
 }
 
 calcularCostoProductos()
-
-
 
 
 for(let item of dataProds) {

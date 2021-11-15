@@ -1,4 +1,3 @@
-
 //NAVBAR 
 const body = document.body;
 let lastScroll = 0;
@@ -37,6 +36,8 @@ for (let i = 0; i < slideCart.length; i ++) {
         nav.classList.toggle('active');
     })
   } 
+
+
 
 //BUTTON 
 $('.button--bubble').each(function() {
@@ -85,6 +86,3 @@ $('.button--bubble').each(function() {
       btTl.restart();
     });
   });
-
-
-  console.log("hola")

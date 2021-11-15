@@ -1,4 +1,3 @@
-
 const productosHome = document.querySelector('#productos-home');
 const productCont = document.querySelector('#template-card').content;
 const productCart = document.querySelector('#template-cart-product').content;
@@ -9,7 +8,6 @@ const productoCarro = document.querySelector('#products-cart');
 const totalPrice = document.querySelector('.total');
 const clearCart = document.querySelector('.clear_btn');
 const checkoutBtn = document.querySelector('.button');
-
 
 
 //GETTIN DATA
@@ -76,13 +74,10 @@ const inCart = objeto => {
     if(cartProducts.hasOwnProperty(productoInCart.id)){
         productoInCart.cantidad = cartProducts[productoInCart.id].cantidad + 1 
     }
-    else if (cartProducts != null) {
-        document.querySelector('.dot').classList.add('active')
-    }
+
   
     cartProducts[productoInCart.id] = {...productoInCart}
     showInCart()
-    
 }
 
 //FUNCION PARA MOSTRAR PRODUCTO EN CARRITO
@@ -105,6 +100,12 @@ const showInCart = () => {
 
     showTotalPrice ()
     localStorage.setItem('productos-cart', JSON.stringify(cartProducts))
+    if(productoCarro.innerHTML != '') {
+        document.querySelector('.dot').classList.add('active')
+    }
+    else {
+        document.querySelector('.dot').classList.remove('active')
+    }
 }
 //PRECIO TOTAL
 
@@ -126,7 +127,6 @@ const showTotalPrice = () => {
 //VACIAR CARRITO    
 clearCart.addEventListener ('click', ()=> {
     cartProducts = {}
-    document.querySelector('.dot').classList.remove('active')
     showInCart()
 })
 
